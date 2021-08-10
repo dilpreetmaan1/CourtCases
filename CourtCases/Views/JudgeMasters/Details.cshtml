@@ -1,0 +1,57 @@
+﻿@model CourtCases.Models.JudgeMasters
+
+@{
+    ViewBag.Title = "Details";
+}
+<aside id="colorlib-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            <li style="background-image: url(/template/images/img_bg_1.jpg);">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                            <div class="slider-text-inner">
+                                <h1>Judge</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+<div>
+    <h4>JudgeMasters</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JudgeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JudgeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speciality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speciality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

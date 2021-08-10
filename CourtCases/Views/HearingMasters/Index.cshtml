@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CourtCases.Models.HearingMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<aside id="colorlib-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            <li style="background-image: url(/template/images/img_bg_2.jpg);">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                            <div class="slider-text-inner">
+                                <h1>Hearing</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseMaster.CaseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseMaster.CaseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NextDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

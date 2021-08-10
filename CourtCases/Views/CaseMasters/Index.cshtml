@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CourtCases.Models.CaseMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<aside id="colorlib-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            <li style="background-image: url(/template/images/img_bg_1.jpg);">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                            <div class="slider-text-inner">
+                                <h1>Case</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JudgeMasters.JudgeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LawyerMaster.LawyerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parties.ApplicantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JudgeMasters.JudgeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LawyerMaster.LawyerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parties.ApplicantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

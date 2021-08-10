@@ -1,0 +1,89 @@
+﻿@model CourtCases.Models.CaseMaster
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<aside id="colorlib-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            <li style="background-image: url(/template/images/img_bg_1.jpg);">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                            <div class="slider-text-inner">
+                                <h1>Case</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CaseMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JudgeMasters.JudgeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JudgeMasters.JudgeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LawyerMaster.LawyerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LawyerMaster.LawyerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parties.ApplicantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parties.ApplicantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

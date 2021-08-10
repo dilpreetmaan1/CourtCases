@@ -1,0 +1,58 @@
+﻿@model CourtCases.Models.HearingMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<aside id="colorlib-hero" class="js-fullheight">
+    <div class="flexslider js-fullheight">
+        <ul class="slides">
+            <li style="background-image: url(/template/images/img_bg_2.jpg);">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                            <div class="slider-text-inner">
+                                <h1>Hearing</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+<div>
+    <h4>HearingMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseMaster.CaseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseMaster.CaseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
